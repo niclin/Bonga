@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  first_name: MyString
+  last_name: MyString
+  password: MyString
+  confirm_password: MyString
+  manager_id: 1
+  joining_date: 2016-12-14
+  end_date: 2016-12-14
+  salary: 1
+  remaining_leaves: 1
+
+two:
+  email: MyString
+  first_name: MyString
+  last_name: MyString
+  password: MyString
+  confirm_password: MyString
+  manager_id: 1
+  joining_date: 2016-12-14
+  end_date: 2016-12-14
+  salary: 1
+  remaining_leaves: 1
