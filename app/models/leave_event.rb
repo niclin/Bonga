@@ -1,0 +1,2 @@
+class LeaveEvent < ApplicationRecord
+end
