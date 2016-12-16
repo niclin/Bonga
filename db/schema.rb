@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161216151243) do
+ActiveRecord::Schema.define(version: 20161216161926) do
 
   create_table "leave_events", force: :cascade do |t|
     t.date     "start_date"
@@ -45,6 +45,12 @@ ActiveRecord::Schema.define(version: 20161216151243) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
+    t.integer  "manager_id"
+    t.date     "joining_date"
+    t.date     "end_date"
+    t.integer  "salary"
+    t.integer  "remaining_leaves"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
