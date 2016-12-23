@@ -10,24 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161216151243) do
+ActiveRecord::Schema.define(version: 20161223041613) do
 
   create_table "leave_events", force: :cascade do |t|
     t.date     "start_date"
     t.date     "end_date"
-    t.integer  "total_days"
-    t.text     "reason_for_leave"
     t.integer  "user_id"
     t.integer  "manager_id"
     t.string   "status"
-    t.text     "reason_for_rejection"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "description"
+    t.decimal  "hours"
+    t.date     "sign_date"
+    t.string   "leave_type"
   end
 
   create_table "roles", force: :cascade do |t|
     t.integer  "level"
-    t.string   "level_name"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
