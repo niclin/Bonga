@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  level: 1
-  level_name: MyString
-
-two:
-  level: 1
-  level_name: MyString
