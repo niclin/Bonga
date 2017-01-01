@@ -1,8 +1,6 @@
-Role.create(:level => 0, :name => "pending")
-Role.create(:level => 1, :name => "admin")
-Role.create(:level => 2, :name => "manager")
-Role.create(:level => 3, :name => "employee")
-Role.create(:level => 4, :name => "intern")
-Role.create(:level => 5, :name => "contractor")
-Role.create(:level => 6, :name => "intern")
-Role.create(:level => 6, :name => "resigned")
+u = User.new
+u.email = "admin@test.com"
+u.password = "12345678"
+u.password_confirmation = "12345678"
+u.role = "admin"
+u.save
