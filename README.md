@@ -1,24 +1,40 @@
-# README
+# Requirements
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby 2.3.2
+* Rails 5
 
-Things you may want to cover:
+# Installation
 
-* Ruby version
+```
+$ git clone git@github.com:niclin/Bonga.git
+$ cd bonga
 
-* System dependencies
+$ bundle install
+$ bundle exec rake db:create
+$ bundle exec rake db:migrate
+```
 
-* Configuration
+#generate admin user
 
-* Database creation
+```
+$ bundle exec rake db:seed
+```
 
-* Database initialization
+## Contributing
 
-* How to run the test suite
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Issues
 
-* ...
+
+If you have problems, please create a [Github issue](https://github.com/niclin/Bonga/issues).
+
+
+##License
+
+Copyright (C) 2016 by Pakogi
