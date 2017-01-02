@@ -5,5 +5,7 @@ Rails.application.routes.draw do
     resources :users
   end
 
+  resources :leave_events
+
   root "welcome#index"
 end
