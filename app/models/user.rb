@@ -7,4 +7,8 @@ class User < ApplicationRecord
   ROLES = %i(
     manager employee contractor intern resigned pending admin
   ).freeze
+
+  def admin?
+    role == 'admin'
+  end
 end
