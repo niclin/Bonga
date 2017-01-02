@@ -6,7 +6,6 @@ class CreateLeaveEvents < ActiveRecord::Migration[5.0]
       t.integer :total_days
       t.text :reason_for_leave
       t.integer :user_id
-      t.integer :manager_id
       t.string :status
       t.text :reason_for_rejection
 
