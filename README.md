@@ -1,9 +1,15 @@
-# Requirements
+# Bonga
+
+Leave-Management-System on Rails
+
+![Bonga Logo](https://github.com/niclin/Bonga/blob/master/public/front-end/Bonga.jpg)
+
+## Requirements
 
 * Ruby 2.3.2
 * Rails 5
 
-# Installation
+## Installation
 
 ```
 $ git clone git@github.com:niclin/Bonga.git
@@ -14,7 +20,7 @@ $ bundle exec rake db:create
 $ bundle exec rake db:migrate
 ```
 
-#generate admin user
+## generate admin user
 
 ```
 $ bundle exec rake db:seed
