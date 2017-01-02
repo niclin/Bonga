@@ -1,0 +1,10 @@
+<%= simple_form_for [:admin, @user] do |f| %>
+  <%= f.input :name, required: false %>
+  <%= f.input :email %>
+  <%= f.input :join_date %>
+  <%= f.input :leave_date %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <%= f.input :role, require: :true, collection: User::ROLES %>
+  <%= f.button :submit %>
+<% end %>
