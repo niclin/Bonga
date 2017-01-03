@@ -1,6 +1,10 @@
 class LeaveEventsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @leave_events = LeaveEvent.where(sign_date: nil)
+  end
+
   def new
     @leave_event = current_user.leave_events.build
   end
@@ -10,6 +14,10 @@ class LeaveEventsController < ApplicationController
     @leave_event.save
 
     redirect_to root_path
+  end
+
+  def show
+    @leave_event = LeaveEvent.find(params[:id])
   end
 
   private
