@@ -11,9 +11,12 @@ class LeaveEventsController < ApplicationController
 
   def create
     @leave_event = current_user.leave_events.build(leave_event_params)
-    @leave_event.save
 
-    redirect_to root_path
+    if @leave_event.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def show
@@ -21,6 +24,7 @@ class LeaveEventsController < ApplicationController
   end
 
   def verify
+
   end
 
   private
