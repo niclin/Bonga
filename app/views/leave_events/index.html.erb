@@ -2,19 +2,19 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <td>#</td>
-        <td>id</td>
-        <td>user_id</td>
-        <td>假單審核</td>
+        <td>status</td>
+        <td>Name</td>
+        <td>Verify</td>
+        <td>Type</td>
       </tr>
     </thead>
     <tbody>
       <% @leave_events.each do |leave_event| %>
         <tr>
-          <td>#</td>
-          <td><%= leave_event.id %></td>
-		  <td><%= leave_event.user_id %></td>
-		  <td><%= link_to('馬上審核', leave_event_path(leave_event) ) %></td>
+          <td><%= leave_event.status %></td>
+		      <td><%= leave_event.user.email %></td>
+		      <td><%= link_to('馬上審核', leave_event_path(leave_event) ) %></td>
+          <td><%= leave_event.leave_type %></td>
         </tr>
       <% end %>
     </tbody>

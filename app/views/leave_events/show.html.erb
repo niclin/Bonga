@@ -1,1 +1,7 @@
-1111
+
+請假開始：<%= @leave_event.start_date %>
+<br>
+請假結束：<%= @leave_event.end_date %>
+<br>
+<%= link_to '讓他請假', verify_leave_event_path, method: :post, class: 'btn btn-success' %>
+<%= link_to '不爽讓你請', root_path, class: 'btn btn-danger'%>

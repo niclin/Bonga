@@ -20,6 +20,9 @@ class LeaveEventsController < ApplicationController
     @leave_event = LeaveEvent.find(params[:id])
   end
 
+  def verify
+  end
+
   private
 
   def leave_event_params
