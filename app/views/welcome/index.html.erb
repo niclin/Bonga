@@ -2,7 +2,6 @@
   <div class="col-md-12">
     當前身分：
     <%= current_user.role %>
-    <%= link_to '我要請假', new_leave_event_path %>
 
     <% if current_user.manager? %>
       <%= link_to '假單審核', leave_events_path %>

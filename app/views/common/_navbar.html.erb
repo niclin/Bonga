@@ -22,14 +22,6 @@
       <% end %>
     </ul>
   </div>
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav side-nav">
-      <li>
-        <% if current_user.admin? %>
-        <%= link_to '管理員工', admin_users_path %>
-        <% end %>
-      </li>
-    </ul>
-  </div>
+  <%= render 'common/sidebar'%>
   <% end %>
 </nav>
