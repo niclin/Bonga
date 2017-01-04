@@ -1,7 +1,8 @@
 <%= simple_form_for @leave_event do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.input :hours %>
+  <%= f.input :start_date, require: :true %>
+  <%= f.input :end_date, require: :true %>
+  <%= f.input :hours, require: :true %>
+  <%= f.input :description, require: :true %>
   <%= f.input :leave_type, require: :true, collection: LeaveEvent::BASIC_TYPES %>
   <%= f.button :submit %>
 <% end %>
