@@ -1,5 +1,22 @@
-<% @users.each do |user| %>
-<%= user.name %>
-<% end %>
+<%= link_to '新增員工', new_admin_user_path, class: 'btn btn-primary' %>
 
-<%= link_to '新增員工', new_admin_user_path %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Role</th>
+      <th>Join Date</th>
+      <th>Leave Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.role %></td>
+      <td><%= user.join_date %></td>
+      <td><%= user.leave_date %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
