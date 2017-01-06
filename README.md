@@ -26,6 +26,13 @@ $ bundle exec rake db:migrate
 $ bundle exec rake db:seed
 ```
 
+## coding style
+
+```
+$ gem install rubocop
+$ rubocop
+```
+
 ## Contributing
 
 1. Fork it
