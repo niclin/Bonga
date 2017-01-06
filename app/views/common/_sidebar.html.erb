@@ -1,17 +1,13 @@
 <div class="collapse navbar-collapse navbar-ex1-collapse">
   <ul class="nav navbar-nav side-nav">
     <li>
-      <% if current_user.admin? %>
-        <%= link_to '管理員工', admin_users_path %>
-      <% end %>
+      <%= link_to '管理員工', admin_users_path if can? :read, current_user %>
     </li>
     <li>
       <%= link_to '我要請假', new_leave_event_path %>
     </li>
     <li>
-      <% if current_user.manager? || current_user.admin? %>
-        <%= link_to '假單審核', leave_events_path %>
-      <% end %>
+      <%= link_to '假單審核', leave_events_path if can? :read, current_user %>
     </li>
     <li>
       <%= link_to '假單狀態' %>

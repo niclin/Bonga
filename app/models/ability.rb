@@ -3,6 +3,11 @@ class Ability
 
   def initialize(user)
     user ||= User.new # guest user (not logged in)
-    can :manage, :all
+    case user.role
+    when "admin"
+      can :manage, :all
+    when "employee"
+      can :create, LeaveEvent, user_id: user.id
+    end
   end
 end
