@@ -1,12 +1,10 @@
-class LeaveEventsController < ApplicationController
+class LeaveEventsController < BaseController
   before_action :authenticate_user!
+
+  load_and_authorize_resource
 
   def index
     @leave_events = LeaveEvent.where(sign_date: nil)
-  end
-
-  def new
-    @leave_event = current_user.leave_events.build
   end
 
   def create
@@ -34,5 +32,4 @@ class LeaveEventsController < ApplicationController
       :start_date, :end_date, :hours, :leave_type, :description
     )
   end
-
 end
