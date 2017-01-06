@@ -15,7 +15,7 @@ class Admin::UsersController < BaseController
     params.require(:user).permit(
       :name, :email, :role,
       :password, :password_confirmation,
-      :join_date, :leave_date
+      :join_date
     )
   end
 end
