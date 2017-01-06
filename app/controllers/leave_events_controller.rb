@@ -17,10 +17,6 @@ class LeaveEventsController < BaseController
     end
   end
 
-  def show
-    @leave_event = LeaveEvent.find(params[:id])
-  end
-
   def verify
 
   end

@@ -13,7 +13,7 @@
         <tr>
           <td><%= leave_event.status %></td>
 		      <td><%= leave_event.user.email %></td>
-		      <td><%= link_to('馬上審核', leave_event_path(leave_event) ) %></td>
+		      <td><%= link_to('show', leave_event_path(leave_event) ) %></td>
           <td><%= leave_event.leave_type %></td>
         </tr>
       <% end %>

@@ -7,7 +7,8 @@ class Ability
     when "admin"
       can :manage, :all
     when "employee"
-      can :create, LeaveEvent, user_id: user.id
+      can :create, LeaveEvent
+      can :read, LeaveEvent
     end
   end
 end
