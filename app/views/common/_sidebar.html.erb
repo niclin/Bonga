@@ -1,5 +1,5 @@
-<div class="collapse navbar-collapse navbar-ex1-collapse">
-  <ul class="nav navbar-nav side-nav">
+<div class="sidebar content-box" style="display: block;">
+  <ul class="nav">
     <li>
       <%= link_to '管理員工', admin_users_path if can? :read, current_user %>
     </li>
@@ -10,7 +10,7 @@
       <%= link_to '假單狀態', leave_events_path %>
     </li>
     <li>
-      <%= link_to '個人資料' %>
+      <%= link_to '個人資料', user_path(current_user) %>
     </li>
   </ul>
 </div>
