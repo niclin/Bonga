@@ -149,8 +149,7 @@ Style/SpaceInsideBrackets:
 # Configuration parameters: EnforcedStyle, SupportedStyles, ConsistentQuotesInMultiline.
 # SupportedStyles: single_quotes, double_quotes
 Style/StringLiterals:
-  Exclude:
-    - 'app/controllers/application_controller.rb'
+  Enabled: false
 
 # Offense count: 7
 # Cop supports --auto-correct.
