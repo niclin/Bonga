@@ -8,7 +8,7 @@ class Ability
       can :manage, :all
     when "employee"
       can :create, LeaveEvent
-      can :read, LeaveEvent
+      can :read, LeaveEvent, user_id: user.id
     end
   end
 end

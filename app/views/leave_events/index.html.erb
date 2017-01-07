@@ -9,7 +9,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @leave_events.each do |leave_event| %>
+      <% current_user.leave_events.each do |leave_event| %>
         <tr>
           <td><%= leave_event.status %></td>
 		      <td><%= leave_event.user.email %></td>
