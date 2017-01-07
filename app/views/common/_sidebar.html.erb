@@ -10,7 +10,9 @@
       <%= link_to '假單狀態', leave_events_path %>
     </li>
     <li>
-      <%= link_to '個人資料', user_path(current_user) %>
+      <% if current_user %>
+        <%= link_to '個人資料', user_path(current_user) %>
+      <% end %>
     </li>
   </ul>
 </div>
