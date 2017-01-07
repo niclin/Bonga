@@ -1,27 +1,32 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  <div class="navbar-header">
-    <a class="navbar-brand" href="/">Bonga</a>
+<div class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <!-- Logo -->
+        <div class="logo">
+          <h1><a href="index.html">Bonga</a></h1>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div class="navbar navbar-inverse" role="banner">
+          <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+            <ul class="nav navbar-nav">
+              <% if !current_user %>
+              <li> <%= link_to("註冊", new_user_registration_path) %> </li>
+              <li> <%= link_to("登入", new_user_session_path) %> </li>
+              <% else %>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hi, <%= current_user.name %> <b class="caret"></b></a>
+                <ul class="dropdown-menu animated fadeInUp">
+                  <li> <%= link_to("帳號設定", edit_user_registration_path )%></li>
+                  <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
+                </ul>
+              </li>
+              <% end %>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
   </div>
-  <% if user_signed_in? %>
-  <div class="collapse navbar-collapse">
-    <ul class="nav navbar-nav navbar-right">
-      <% if !current_user %>
-      <li> <%= link_to("註冊", new_user_registration_path) %> </li>
-      <li> <%= link_to("登入", new_user_session_path) %> </li>
-      <% else %>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          Hi!, <%= current_user.name %>
-          <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-          <li> <%= link_to("帳號設定", edit_user_registration_path )%></li>
-          <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
-        </ul>
-      </li>
-      <% end %>
-    </ul>
-  </div>
-  <%= render 'common/sidebar'%>
-  <% end %>
-</nav>
+</div>

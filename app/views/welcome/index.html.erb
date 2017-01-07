@@ -1,10 +1,33 @@
-<div class="row">
-  <div class="col-md-12">
+<div class="col-md-12">
+  <div class="content-box-header">
+    <div class="panel-title">基本資料</div>
+  </div>
+  <div class="content-box-large box-with-header">
     當前身分：
     <%= current_user.role %>
+  </div>
+</div>
 
-    <% if current_user.manager? %>
-      <%= link_to '假單審核', leave_events_path %>
-    <% end %>
+<div class="col-md-6">
+  <div class="content-box-header">
+    <div class="panel-title">待處理假單</div>
+  </div>
+  <div class="content-box-large box-with-header">
+  </div>
+</div>
+
+<div class="col-md-6">
+  <div class="content-box-header">
+    <div class="panel-title">已處理假單</div>
+  </div>
+  <div class="content-box-large box-with-header">
+  </div>
+</div>
+
+<div class="col-md-12">
+  <div class="content-box-header">
+    <div class="panel-title">今日休假人員</div>
+  </div>
+  <div class="content-box-large box-with-header">
   </div>
 </div>
