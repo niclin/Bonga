@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20161224064838) do
     t.date     "end_date"
     t.integer  "user_id"
     t.string   "status",      default: "pending"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.text     "description"
     t.decimal  "hours"
     t.date     "sign_date"
