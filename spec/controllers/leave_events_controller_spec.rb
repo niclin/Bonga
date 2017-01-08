@@ -77,4 +77,28 @@ RSpec.describe LeaveEventsController do
       expect(response).to render_template("new")
     end
   end
+
+  describe "POST create" do
+    it "create a new leave_event record" do
+      user = create(:user)
+      sign_in user
+
+      leave_event = build(:leave_event)
+
+      expect do
+        post :create, params: { :leave_event => attributes_for(:leave_event) }
+      end.to change{ LeaveEvent.count }.by(1)
+    end
+
+    it "redirects to leave_events_path" do
+      user = create(:user)
+      sign_in user
+
+      leave_event = build(:leave_event)
+
+      post :create, params: { :leave_event => attributes_for(:leave_event) }
+
+      expect(response).to redirect_to leave_events_path
+    end
+  end
 end

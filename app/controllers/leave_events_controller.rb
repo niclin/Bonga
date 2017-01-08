@@ -11,7 +11,7 @@ class LeaveEventsController < BaseController
     @leave_event = current_user.leave_events.build(leave_event_params)
 
     if @leave_event.save
-      redirect_to leave_event_path(@leave_event), notice: "假單送出成功"
+      redirect_to leave_events_path, notice: "假單送出成功"
     else
       render :new
     end
