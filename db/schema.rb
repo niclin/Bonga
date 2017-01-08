@@ -17,12 +17,13 @@ ActiveRecord::Schema.define(version: 20161224064838) do
     t.date     "end_date"
     t.integer  "user_id"
     t.string   "status",      default: "pending"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.text     "description"
     t.decimal  "hours"
     t.date     "sign_date"
-    t.string   "leave_type",  default: "panding"
+    t.string   "leave_type",  default: "pending"
+    t.integer  "manager_id"
   end
 
   create_table "users", force: :cascade do |t|
