@@ -11,7 +11,7 @@ class LeaveEventsController < BaseController
     @leave_event = current_user.leave_events.build(leave_event_params)
 
     if @leave_event.save
-      redirect_to root_path
+      redirect_to leave_event_path(@leave_event)
     else
       render :new
     end
