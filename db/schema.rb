@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20161224064838) do
     t.text     "description"
     t.decimal  "hours"
     t.date     "sign_date"
-    t.string   "leave_type",  default: "panding..."
+    t.string   "leave_type",  default: "pending"
     t.integer  "manager_id"
   end
 
