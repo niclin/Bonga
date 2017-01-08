@@ -1,4 +1,4 @@
-# Bonga
+# Bonga [![Build Status](https://travis-ci.org/niclin/Bonga.svg?branch=master)](https://travis-ci.org/niclin/Bonga)
 
 Leave-Management-System on Rails
 
