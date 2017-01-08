@@ -53,4 +53,28 @@ RSpec.describe LeaveEventsController do
       expect(response).to render_template("show")
     end
   end
+
+
+  describe "GET new" do
+    it "assign @leave_event" do
+      user = create(:user)
+      sign_in user
+      leave_event = build(:leave_event)
+
+      get :new
+
+      expect(assigns(:leave_event)).to be_a_new(LeaveEvent)
+    end
+
+    it "render template" do
+      user = create(:user)
+      sign_in user
+
+      leave_event = build(:leave_event)
+
+      get :new
+
+      expect(response).to render_template("new")
+    end
+  end
 end
