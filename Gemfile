@@ -33,6 +33,8 @@ group :development, :test do
   gem 'rubocop', require: false
   gem 'pry-byebug'
   gem 'rspec-rails', '~> 3.5.2'
+  gem 'rails-controller-testing', "~> 1.0.1"
+  gem "factory_girl_rails", "~> 4.7.0"
 end
 
 group :development do
