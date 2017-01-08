@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+- 2.3.2
+bundler_args: --jobs 1 --retry 3
+script:
+  - bundle exec rake db:setup
+  - bundle exec rspec
+cache: bundler
