@@ -6,6 +6,7 @@ class RebuildLeaveEvents < ActiveRecord::Migration[5.0]
   	add_column :leave_events, :description, :text
   	add_column :leave_events, :hours, :decimal
   	add_column :leave_events, :sign_date, :date
-  	add_column :leave_events, :leave_type, :string, default: "panding"
+    add_column :leave_events, :leave_type, :string, default: "panding..."
+    add_column :leave_events, :manager_id, :integer
   end
 end
