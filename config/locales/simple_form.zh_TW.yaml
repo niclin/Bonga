@@ -1,0 +1,19 @@
+zh-TW:
+  simple_form:
+    "yes": '是'
+    "no": '否'
+    required:
+      text: '必填'
+      mark: '*'
+    error_notification:
+      default_message: "很抱歉，請您再檢查一下："
+    options:
+      user:
+        role:
+          manager: '主管'
+          employee: '員工'
+          contractor: '約聘'
+          intern: '實習生'
+          resigned: '離職'
+          pending: '待審'
+          admin: '系統管理員'
