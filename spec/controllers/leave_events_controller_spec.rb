@@ -1,9 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe LeaveEventsController do
-  describe "GET index" do
-    context "when admin user login" do
-      let(:user) { create(:user) }
+  context "when admin user login" do
+    let(:user) { create(:user) }
+
+    describe "GET index" do
       it "assigns @leave_events and render template when current user is admin" do
         sign_in user
 
