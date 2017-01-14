@@ -7,7 +7,12 @@ class LeaveEvent < ApplicationRecord
   STATUS = %i(pending approved rejected canceled).freeze
 
   def verify(manager)
-    return false if manager.nil?
+    return false if manager.nil? && !can_verify?
+
     self.update_columns(manager_id: manager.id, status: "approved")
+  end
+
+  def can_verify?
+    status != "approved"
   end
 end
