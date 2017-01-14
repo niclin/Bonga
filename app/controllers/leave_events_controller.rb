@@ -18,11 +18,13 @@ class LeaveEventsController < BaseController
   end
 
   def verify
-    @leave_event = LeaveEvent.find(params[:id])
-    @leave_event.manager_id = current_user.id
-    @leave_event.status = "approved"
-    @leave_event.save
-    redirect_to leave_events_path, notice: "審核成功"
+  	obj = resource_instance
+
+  	if obj.verify(current_user)
+    	redirect_to leave_events_path, notice: "審核成功"
+    else
+    	redirect_to leave_events_path, alert: "審核失敗"
+    end
   end
 
   private
