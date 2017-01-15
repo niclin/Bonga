@@ -6,6 +6,7 @@
     <table class="table table-hover">
       <thead>
         <tr>
+          <td>#</td>
           <td>status</td>
           <td>Name</td>
           <td>Verify</td>
@@ -15,9 +16,10 @@
       <tbody>
         <% current_user.leave_events.each do |leave_event| %>
         <tr>
+          <td><%= leave_event.token %></td>
           <td><%= leave_event.status %></td>
           <td><%= leave_event.user.email %></td>
-          <td><%= link_to('show', leave_event_path(leave_event) ) %></td>
+          <td><%= link_to('show', leave_event_path(leave_event.token)) %></td>
           <td><%= leave_event.leave_type %></td>
         </tr>
         <% end %>

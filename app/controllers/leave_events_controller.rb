@@ -1,7 +1,6 @@
 class LeaveEventsController < BaseController
-  before_action :authenticate_user!
 
-  load_and_authorize_resource
+  skip_load_resource :only => :show
 
   def index
     @leave_events = LeaveEvent.where(sign_date: nil)
@@ -17,13 +16,17 @@ class LeaveEventsController < BaseController
     end
   end
 
-  def verify
-  	obj = resource_instance
+  def show
+    @leave_event = LeaveEvent.find_by_token(params[:id])
+  end
 
-  	if obj.verify(current_user)
-    	redirect_to leave_events_path, notice: "審核成功"
+  def verify
+    obj = resource_instance
+
+    if obj.verify(current_user)
+      redirect_to leave_events_path, notice: "審核成功"
     else
-    	redirect_to leave_events_path, alert: "審核失敗"
+      redirect_to leave_events_path, alert: "審核失敗"
     end
   end
 
