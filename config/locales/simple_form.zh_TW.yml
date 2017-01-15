@@ -17,3 +17,14 @@ zh-TW:
           resigned: '離職'
           pending: '待審'
           admin: '系統管理員'
+      leave_events:
+        leave_type:
+          annual: '特休'
+          bonus: '補休'
+          personal: '事假'
+          sick: '病假'
+        status:
+          approved: '核准'
+          rejected: '駁回'
+          pending: '待審'
+          canceled: '取消'
