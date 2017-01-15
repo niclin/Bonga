@@ -5,3 +5,5 @@ u.password_confirmation = '12345678'
 u.role = 'admin'
 u.name = 'Admin'
 u.save
+
+puts 'Admin is created'
