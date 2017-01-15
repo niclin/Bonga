@@ -11,8 +11,10 @@
     <br>
     類型：<%= @leave_event.leave_type %>
     <% if can? :read, current_user %>
-    <%= link_to '讓他請假', verify_leave_event_path, method: :post, class: 'btn btn-success', data: { confirm: "是否讓他放假?"} %>
-    <%= link_to '不爽讓你請', root_path, class: 'btn btn-danger'%>
+    <% if @leave_event.can_verify? %>
+      <%= link_to '讓他請假', verify_leave_event_path, method: :post, class: 'btn btn-success', data: { confirm: "是否讓他放假?"} %>
+      <%= link_to '不爽讓你請', root_path, class: 'btn btn-danger'%>
+      <% end %>
     <% end %>
   </div>
 </div>

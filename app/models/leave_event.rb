@@ -5,4 +5,14 @@ class LeaveEvent < ApplicationRecord
 
   BASIC_TYPES = %i(annual bonus personal sick).freeze
   STATUS = %i(pending approved rejected canceled).freeze
+
+  def verify(manager)
+    return false if manager.nil? && !can_verify?
+
+    self.update_columns(manager_id: manager.id, status: "approved", sign_date: Time.zone.now)
+  end
+
+  def can_verify?
+    status != "approved"
+  end
 end
