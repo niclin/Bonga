@@ -1,5 +1,4 @@
 class LeaveEventsController < BaseController
-
   skip_load_resource :only => [:index, :show]
 
   def index
@@ -21,7 +20,7 @@ class LeaveEventsController < BaseController
   end
 
   def verify
-    obj = resource_instance
+    obj = LeaveEvent.find_by_token(params[:id])
 
     if obj.verify(current_user)
       redirect_to leave_events_path, notice: "審核成功"
