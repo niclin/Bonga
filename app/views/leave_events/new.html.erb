@@ -8,7 +8,7 @@
     <%= f.input :end_date, require: :true %>
     <%= f.input :hours, require: :true %>
     <%= f.input :description, require: :true %>
-    <%= f.input :leave_type, require: :true, collection: LeaveEvent::BASIC_TYPES %>
+    <%= f.input :leave_type, require: :true, collection: LeaveEvent::BASIC_TYPES, include_blank: false %>
     <%= f.button :submit %>
     <% end %>
   </div>
