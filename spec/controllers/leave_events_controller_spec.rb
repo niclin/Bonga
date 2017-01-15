@@ -35,7 +35,7 @@ RSpec.describe LeaveEventsController do
 
         leave_event = create(:leave_event)
 
-        get :show, params: { id: leave_event.id }
+        get :show, params: { id: leave_event.token }
 
         expect(assigns[:leave_event]).to eq(leave_event)
       end
