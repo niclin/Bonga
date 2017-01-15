@@ -9,7 +9,7 @@ class LeaveEvent < ApplicationRecord
   def verify(manager)
     return false if manager.nil? && !can_verify?
 
-    self.update_columns(manager_id: manager.id, status: "approved")
+    self.update_columns(manager_id: manager.id, status: "approved", sign_date: DateTime.now)
   end
 
   def can_verify?
