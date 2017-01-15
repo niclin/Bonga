@@ -1,6 +1,6 @@
 class LeaveEventsController < BaseController
 
-  skip_load_resource :only => :show
+  skip_load_resource :only => [:index, :show]
 
   def index
     @leave_events = LeaveEvent.where(sign_date: nil)

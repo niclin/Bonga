@@ -8,19 +8,55 @@
   </div>
 </div>
 
-<div class="col-md-6">
+<div class="col-md-12">
   <div class="content-box-header">
-    <div class="panel-title">待處理假單</div>
+    <div class="panel-title">我的待處理假單</div>
   </div>
   <div class="content-box-large box-with-header">
+                <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>假單編號</th>
+                          <th>事由</th>
+                          <th>狀態</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      <% @pending_events.each do |p| %>
+                        <tr>
+                          <td><%= link_to p.token, leave_event_path(p.token) %></td>
+                          <td><%= p.leave_type %></td>
+                          <td><%= p.status %></td>
+                        </tr>
+                      <% end %>
+                      </tbody>
+                    </table>
   </div>
 </div>
 
-<div class="col-md-6">
+<div class="col-md-12">
   <div class="content-box-header">
-    <div class="panel-title">已處理假單</div>
+    <div class="panel-title">我的已處理假單</div>
   </div>
   <div class="content-box-large box-with-header">
+                  <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>假單編號</th>
+                          <th>事由</th>
+                          <th>狀態</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      <% @completed_events.each do |p| %>
+                        <tr>
+                          <td><%= link_to p.token, leave_event_path(p.token) %></td>
+                          <td><%= p.leave_type %></td>
+                          <td><%= p.status %></td>
+                        </tr>
+                      <% end %>
+                      </tbody>
+                    </table>
   </div>
 </div>
 

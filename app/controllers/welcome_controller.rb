@@ -6,5 +6,7 @@ class WelcomeController < ApplicationController
   end
 
   def index
+    @pending_events = current_user.leave_events.where(status: "pending")
+    @completed_events = current_user.leave_events.completed
   end
 end
