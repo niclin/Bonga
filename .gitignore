@@ -13,6 +13,7 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*
+/.sass-cache/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep
