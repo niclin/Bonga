@@ -22,8 +22,7 @@ ActiveRecord::Schema.define(version: 20170115130054) do
     t.text     "description"
     t.decimal  "hours"
     t.date     "sign_date"
-    t.string   "leave_type",  default: "pending"
-    t.integer  "manager_id"
+    t.string   "leave_type",  default: "panding"
     t.string   "token"
     t.index ["token"], name: "index_leave_events_on_token"
   end
