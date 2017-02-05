@@ -15,8 +15,14 @@ class LeaveEvent < ApplicationRecord
     self.update_columns(manager_id: manager.id, status: "approved", sign_date: Time.zone.now)
   end
 
+  def reject(manager)
+    return false if manager.nil? && !can_verify?
+
+    self.update_columns(manager_id: manager.id, status: "rejected", sign_date: Time.zone.now)
+  end
+
   def can_verify?
-    status != "approved"
+    status == "pending"
   end
 
   def generate_token

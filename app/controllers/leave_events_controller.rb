@@ -1,5 +1,5 @@
 class LeaveEventsController < BaseController
-  skip_load_resource :only => [:index, :show]
+  skip_load_resource :except => [:create, :new]
 
   def index
     @leave_events = LeaveEvent.where(sign_date: nil)
@@ -26,6 +26,16 @@ class LeaveEventsController < BaseController
       redirect_to leave_events_path, notice: "審核成功"
     else
       redirect_to leave_events_path, alert: "審核失敗"
+    end
+  end
+
+  def reject
+    obj = LeaveEvent.find_by_token(params[:id])
+
+    if obj.reject(current_user)
+      redirect_to leave_events_path, notice: "駁回成功"
+    else
+      redirect_to leave_events_path, alert: "駁回失敗"
     end
   end
 

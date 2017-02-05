@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :leave_events do
       member do
         post :verify
+        post :reject
       end
     end
 

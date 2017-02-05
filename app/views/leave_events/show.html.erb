@@ -13,7 +13,7 @@
     <% if can? :read, current_user %>
     <% if @leave_event.can_verify? %>
       <%= link_to '讓他請假', verify_leave_event_path, method: :post, class: 'btn btn-success', data: { confirm: "是否讓他放假?"} %>
-      <%= link_to '不爽讓你請', root_path, class: 'btn btn-danger'%>
+      <%= link_to '拒絕請假', reject_leave_event_path, method: :post, class: 'btn btn-danger', data: { confirm: "是否拒絕他請假"} %>
       <% end %>
     <% end %>
   </div>
