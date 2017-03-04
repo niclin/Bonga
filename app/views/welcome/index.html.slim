@@ -1,0 +1,42 @@
+.col-md-12
+  .content-box-header
+    .panel-title 基本資料
+  .content-box-large.box-with-header
+    | 當前身分：
+    = current_user.role
+.col-md-12
+  .content-box-header
+    .panel-title 我的待處理假單
+  .content-box-large.box-with-header
+    table.table.table-striped
+      thead
+        tr
+          th 假單編號
+          th 事由
+          th 狀態
+      tbody
+        - @pending_events.each do |p|
+          tr
+            td= link_to p.token, leave_event_path(p.token)
+            td= t_option_str('leave_type', p.leave_type)
+            td= t_option_str('leave_status', p.status)
+.col-md-12
+  .content-box-header
+    .panel-title 我的已處理假單
+  .content-box-large.box-with-header
+    table.table.table-striped
+      thead
+        tr
+          th 假單編號
+          th 事由
+          th 狀態
+      tbody
+        - @completed_events.each do |p|
+          tr
+            td= link_to p.token, leave_event_path(p.token)
+            td= t_option_str('leave_type', p.leave_type)
+            td= t_option_str('leave_status', p.status)
+.col-md-12
+  .content-box-header
+    .panel-title 今日休假人員
+  .content-box-large.box-with-header

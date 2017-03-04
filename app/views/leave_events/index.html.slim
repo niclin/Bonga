@@ -1,0 +1,18 @@
+.col-md-12
+  .content-box-header
+    .panel-title 處理假單
+  .content-box-large.box-with-header
+    table.table.table-hover
+      thead
+        tr
+          td #
+          td status
+          td Name
+          td Type
+      tbody
+        - current_user.leave_events.each do |leave_event|
+          tr
+            td= link_to leave_event.token, leave_event_path(leave_event.token)
+            td= leave_event.status
+            td= leave_event.user.email
+            td= leave_event.leave_type

@@ -31,6 +31,7 @@ gem 'font-awesome-rails'
 gem 'compass-rails'
 # Sass globbing allows you to import many sass or scss files in a single import statement
 gem 'sass-globbing'
+gem "slim-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
