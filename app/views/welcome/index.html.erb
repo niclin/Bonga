@@ -25,8 +25,8 @@
         <% @pending_events.each do |p| %>
         <tr>
           <td><%= link_to p.token, leave_event_path(p.token) %></td>
-          <td><%= p.leave_type %></td>
-          <td><%= p.status %></td>
+          <td><%= t_option_str('leave_type', p.leave_type) %></td>
+          <td><%= t_option_str('leave_status', p.status) %></td>
         </tr>
         <% end %>
       </tbody>
@@ -51,8 +51,8 @@
         <% @completed_events.each do |p| %>
         <tr>
           <td><%= link_to p.token, leave_event_path(p.token) %></td>
-          <td><%= p.leave_type %></td>
-          <td><%= p.status %></td>
+          <td><%= t_option_str('leave_type', p.leave_type) %></td>
+          <td><%= t_option_str('leave_status', p.status) %></td>
         </tr>
         <% end %>
       </tbody>
