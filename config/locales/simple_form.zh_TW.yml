@@ -17,7 +17,7 @@ zh-TW:
           resigned: '離職'
           pending: '待審'
           admin: '系統管理員'
-      leave_events:
+      leave_event:
         leave_type:
           annual: '特休'
           bonus: '補休'
