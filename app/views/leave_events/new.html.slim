@@ -5,9 +5,9 @@
     = simple_form_for @leave_event do |f|
       .row
         .col-md-6
-          = f.input :start_date, require: :true, as: :string, input_html: { class: "datepicker" }
+          = f.input :start_time, require: :true, as: :string, input_html: { class: "datepicker" }
         .col-md-6
-          = f.input :end_date, require: :true, as: :string, input_html: { class: "datepicker" }
+          = f.input :end_time, require: :true, as: :string, input_html: { class: "datepicker" }
         .col-md-6
           = f.input :description, require: :true
         .col-md-6

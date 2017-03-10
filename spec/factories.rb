@@ -9,8 +9,8 @@ FactoryGirl.define do
   end
 
   factory :leave_event do
-    start_date Time.zone.today
-    end_date Time.zone.today
+    start_time Time.zone.today
+    end_time Time.zone.today
     hours "0"
     description "reason"
   end

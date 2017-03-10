@@ -2,7 +2,7 @@ class LeaveEvent < ApplicationRecord
   belongs_to :user
   before_create :generate_token
 
-  validates_presence_of :start_date, :end_date, :leave_type, :hours, :description
+  validates_presence_of :start_time, :end_time, :leave_type, :hours, :description
 
   BASIC_TYPES = %i(annual bonus personal sick).freeze
   STATUS = %i(pending approved rejected canceled).freeze
