@@ -1,8 +1,0 @@
-= simple_form_for [:admin, @user] do |f|
-  = f.input :name, required: true
-  = f.input :email, required: true
-  = f.input :join_date, include_blank: true
-  = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
-  = f.input :password_confirmation, required: true
-  = f.input :role, require: :true, collection: User::ROLES, include_blank: false
-  = f.button :submit
