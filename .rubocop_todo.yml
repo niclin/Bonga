@@ -59,7 +59,6 @@ Style/AlignParameters:
 # SupportedStyles: nested, compact
 Style/ClassAndModuleChildren:
   Exclude:
-    - 'app/controllers/admin/users_controller.rb'
     - 'app/helpers/admin/users_helper.rb'
     - 'test/controllers/admin/users_controller_test.rb'
     - 'test/test_helper.rb'
