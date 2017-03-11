@@ -1,5 +1,5 @@
 class UsersController < BaseController
-  before_action :admin_required
+  before_action :admin_required, only: :create
 
   def create
     if @user.save

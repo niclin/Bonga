@@ -2,7 +2,9 @@
 <div class="sidebar content-box" style="display: block;">
   <ul class="nav">
     <li>
-      <%= link_to '管理員工', users_path if can? :read, current_user %>
+    <% if can? :create, current_user %>
+      <%= link_to '管理員工', users_path %>
+    <% end %>
     </li>
     <li>
       <%= link_to '我要請假', new_leave_event_path %>
@@ -11,9 +13,7 @@
       <%= link_to '假單狀態', leave_events_path %>
     </li>
     <li>
-      <% if current_user %>
-        <%= link_to '個人資料', user_path(current_user) %>
-      <% end %>
+      <%= link_to '個人資料', user_path(current_user) %>
     </li>
   </ul>
 </div>

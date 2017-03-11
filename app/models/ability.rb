@@ -9,6 +9,7 @@ class Ability
     when "employee"
       can :create, LeaveEvent
       can :read, LeaveEvent, user_id: user.id
+      can :read, User
     end
   end
 end
