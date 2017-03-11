@@ -14,7 +14,6 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require bootstrap-datepicker
-//= require turbolinks
 //= require_tree .
 $(document).ready(function() {
   return $('.datepicker').datetimepicker({
@@ -22,6 +21,6 @@ $(document).ready(function() {
     todayBtn: true,
     minView: 'day',
     autoclose: true,
-    format: 'yyyy-mm-dd HH:00'
+    format: 'yyyy-mm-dd hh:00'
   });
 });
