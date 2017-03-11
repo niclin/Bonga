@@ -1,7 +1,9 @@
 = simple_form_for @user do |f|
   = f.input :name, required: true
   = f.input :email, required: true
-  = f.input :join_date, include_blank: true
+  = f.input :join_date, input_html: { value: Time.zone.today}
+  - unless @user.new_record?
+    = f.input :leave_date, input_html: { value: Time.zone.today}
   = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
   = f.input :password_confirmation, required: true
   = f.input :role, require: :true, collection: User::ROLES
