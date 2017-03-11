@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /zh-TW|en/ do
-    devise_for :users
+    devise_for :users, controllers: {:registrations => "users"}
 
     resources :leave_events do
       member do

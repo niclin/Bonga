@@ -1,0 +1,21 @@
+.col-md-12
+  .content-box-header
+    .panel-title 管理員工
+  .content-box-large.box-with-header
+    = link_to '新增員工', new_user_path, class: 'btn btn-primary'
+    table.table
+      thead
+        tr
+          th Name
+          th Role
+          th Join Date
+          th Leave Date
+          th #
+      tbody
+        - @users.each do |user|
+          tr
+            td= user.name
+            td= user.role
+            td= user.join_date
+            td= user.leave_date
+            td= link_to 'edit', edit_user_path(user)

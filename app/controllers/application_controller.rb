@@ -13,6 +13,12 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
   end
 
+  def admin_required
+    unless current_user.admin?
+      redirect_to "/"
+    end
+  end
+
   def layout_by_resource
     if devise_controller?
       "devise"
