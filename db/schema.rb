@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310185333) do
-
-  create_table "leave_event_messages", force: :cascade do |t|
-    t.integer  "leave_event_id"
-    t.integer  "user_id"
-    t.text     "message"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
+ActiveRecord::Schema.define(version: 20170310172209) do
 
   create_table "leave_events", force: :cascade do |t|
     t.datetime "start_time"
