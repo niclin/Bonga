@@ -43,7 +43,7 @@ class LeaveEventsController < BaseController
 
   def leave_event_params
     params.require(:leave_event).permit(
-      :start_time, :end_time, :hours, :leave_type, :description
+      :start_time, :end_time, :leave_type, :description
     )
   end
 end
