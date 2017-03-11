@@ -17,6 +17,15 @@ zh-TW:
       menstrual: '生理假'
       family_care: '家庭照護假'
       funeral: '喪假'
+    user:
+      role:
+        manager: '主管'
+        employee: '員工'
+        contractor: '約聘'
+        intern: '實習生'
+        resigned: '離職'
+        pending: '待審'
+        admin: '系統管理員'
 
   activerecord:
     attributes:
@@ -41,12 +50,4 @@ zh-TW:
         manager: "簽核主管"
         sign_date: "簽核時間"
         comment: "主管備註"
-  user:
-    role:
-      manager: '主管'
-      employee: '員工'
-      contractor: '約聘'
-      intern: '實習生'
-      resigned: '離職'
-      pending: '待審'
-      admin: '系統管理員'
+
