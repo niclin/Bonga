@@ -1,9 +1,18 @@
 language: ruby
 rvm:
-- 2.3.2
+  - 2.3.2
+  - ruby-head
 bundler_args: --jobs 1 --retry 3
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - rvm: ruby-head
+
+before_script:
+  - RAILS_ENV=test bundle exec rake db:migrate
+
 script:
-  - bin/rake db:migrate RAILS_ENV=test
   - bundle exec rubocop .
-  - bin/rake
-cache: bundler
+  - RAILS_ENV=test bundle exec rake
+
