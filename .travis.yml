@@ -4,5 +4,6 @@ rvm:
 bundler_args: --jobs 1 --retry 3
 script:
   - bin/rake db:migrate RAILS_ENV=test
+  - bundle exec rubocop .
   - bin/rake
 cache: bundler

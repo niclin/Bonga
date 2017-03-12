@@ -1,5 +1,5 @@
 class LeaveEventsController < BaseController
-  skip_load_resource :except => [:create, :new]
+  skip_load_resource except: [:create, :new]
 
   def index
     @leave_events = LeaveEvent.where(sign_date: nil)

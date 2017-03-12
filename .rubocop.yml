@@ -8,3 +8,4 @@ AllCops:
     - bin/**
     - config/**/*
     - spec/**/*
+    - config.rb
